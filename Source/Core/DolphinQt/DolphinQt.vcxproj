@@ -31,10 +31,8 @@
       <AdditionalIncludeDirectories>$(ProjectDir)Settings;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories>$(ProjectDir)TAS;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalIncludeDirectories>$(ProjectDir)VideoInterface;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-
       <!--Qt 6.3.0 headers use std::aligned_storage instead of alignas-->
       <PreprocessorDefinitions>_SILENCE_CXX23_ALIGNED_STORAGE_DEPRECATION_WARNING;DOLPHIN_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-
       <!--Jump through some hoops to generate a pch file local to this project-->
       <AdditionalIncludeDirectories>$(SourceDir)PCH;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeader>Use</PrecompiledHeader>
@@ -178,6 +176,9 @@
     <ClCompile Include="pch_qt.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Plugin\core.cpp" />
+    <ClCompile Include="Plugin\gui_application.cpp" />
+    <ClCompile Include="Plugin\gui_main_window.cpp" />
     <ClCompile Include="QtUtils\AspectRatioWidget.cpp" />
     <ClCompile Include="QtUtils\BlockUserInputFilter.cpp" />
     <ClCompile Include="QtUtils\DolphinFileDialog.cpp" />
@@ -237,6 +238,7 @@
     <ClInclude Include="Config\PatchesWidget.h" />
     <ClInclude Include="Debugger\RegisterColumn.h" />
     <ClInclude Include="GBAHost.h" />
+    <ClInclude Include="Plugin\export.h" />
     <ClInclude Include="QtUtils\ActionHelper.h" />
     <ClInclude Include="QtUtils\DolphinFileDialog.h" />
     <ClInclude Include="QtUtils\ImageConverter.h" />

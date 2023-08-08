@@ -870,7 +870,7 @@ void MainWindow::OnStopComplete()
   SetFullScreenResolution(false);
 
   if (m_exit_requested || Settings::Instance().IsBatchModeEnabled())
-    QGuiApplication::exit(0);
+    qApp->postEvent(qApp, new QEvent{QEvent::Quit});
 
   // If the current emulation prevented the booting of another, do that now
   if (m_pending_boot != nullptr)

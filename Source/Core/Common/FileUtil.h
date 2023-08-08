@@ -242,6 +242,7 @@ std::string GetBundleDirectory();
 
 std::string GetExePath();
 std::string GetExeDirectory();
+void SetExeDirectory(const std::string& path);
 
 bool WriteStringToFile(const std::string& filename, std::string_view str);
 bool ReadFileToString(const std::string& filename, std::string& str);

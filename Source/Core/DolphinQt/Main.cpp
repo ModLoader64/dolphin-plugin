@@ -41,7 +41,7 @@
 #include "UICommon/CommandLineParse.h"
 #include "UICommon/UICommon.h"
 
-static bool QtMsgAlertHandler(const char* caption, const char* text, bool yes_no,
+extern bool QtMsgAlertHandler(const char* caption, const char* text, bool yes_no,
                               Common::MsgType style)
 {
   const bool called_from_cpu_thread = Core::IsCPUThread();

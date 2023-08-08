@@ -750,9 +750,18 @@ std::string GetExePath()
 #endif
 }
 
+static std::string s_exe_directory;
+
 std::string GetExeDirectory()
 {
+  if (!s_exe_directory.empty())
+    return s_exe_directory;
   return PathToString(StringToPath(GetExePath()).parent_path());
+}
+
+void SetExeDirectory(const std::string& path)
+{
+  s_exe_directory = path;
 }
 
 static std::string CreateSysDirectoryPath()
