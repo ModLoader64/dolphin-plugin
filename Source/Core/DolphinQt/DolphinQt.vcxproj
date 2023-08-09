@@ -176,7 +176,9 @@
     <ClCompile Include="pch_qt.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Plugin\config.cpp" />
     <ClCompile Include="Plugin\core.cpp" />
+    <ClCompile Include="Plugin\dup_string.cpp" />
     <ClCompile Include="Plugin\gui_application.cpp" />
     <ClCompile Include="Plugin\gui_main_window.cpp" />
     <ClCompile Include="QtUtils\AspectRatioWidget.cpp" />
@@ -238,6 +240,7 @@
     <ClInclude Include="Config\PatchesWidget.h" />
     <ClInclude Include="Debugger\RegisterColumn.h" />
     <ClInclude Include="GBAHost.h" />
+    <ClInclude Include="Plugin\dup_string.h" />
     <ClInclude Include="Plugin\export.h" />
     <ClInclude Include="QtUtils\ActionHelper.h" />
     <ClInclude Include="QtUtils\DolphinFileDialog.h" />
