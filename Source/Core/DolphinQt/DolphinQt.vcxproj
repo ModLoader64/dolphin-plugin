@@ -183,6 +183,7 @@
     <ClCompile Include="Plugin\gui_main_window.cpp" />
     <ClCompile Include="Plugin\on_screen_display.cpp" />
     <ClCompile Include="Plugin\on_screen_ui.cpp" />
+    <ClCompile Include="Plugin\state.cpp" />
     <ClCompile Include="QtUtils\AspectRatioWidget.cpp" />
     <ClCompile Include="QtUtils\BlockUserInputFilter.cpp" />
     <ClCompile Include="QtUtils\DolphinFileDialog.cpp" />
