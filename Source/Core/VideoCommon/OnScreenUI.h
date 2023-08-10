@@ -75,5 +75,11 @@ private:
   float m_backbuffer_scale = 1.0;
 
   bool m_ready = false;
+
+public:
+  using ImGuiHookCallbackFunc = void (*)(void* context);
+  static void SetImGuiInitCallback(ImGuiHookCallbackFunc callback);
+  static void SetImGuiRenderCallback(ImGuiHookCallbackFunc callback);
+  static void CallImGuiHookCallback(ImGuiHookCallbackFunc callback);
 };
 }  // namespace VideoCommon

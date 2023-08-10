@@ -32,6 +32,10 @@
 
 namespace VideoCommon
 {
+
+static OnScreenUI::ImGuiHookCallbackFunc g_imgui_init_callback;
+static OnScreenUI::ImGuiHookCallbackFunc g_imgui_render_callback;
+
 bool OnScreenUI::Initialize(u32 width, u32 height, float scale)
 {
   std::unique_lock<std::mutex> imgui_lock(m_imgui_mutex);
@@ -55,6 +59,8 @@ bool OnScreenUI::Initialize(u32 width, u32 height, float scale)
   // Don't create an ini file. TODO: Do we want this in the future?
   ImGui::GetIO().IniFilename = nullptr;
   SetScale(scale);
+
+  CallImGuiHookCallback(g_imgui_init_callback);
 
   PortableVertexDeclaration vdecl = {};
   vdecl.position = {ComponentFormat::Float, 2, offsetof(ImDrawVert, pos), true, false};
@@ -330,6 +336,8 @@ void OnScreenUI::Finalize()
 {
   auto lock = GetImGuiLock();
 
+  CallImGuiHookCallback(g_imgui_render_callback);
+
   g_perf_metrics.DrawImGuiStats(m_backbuffer_scale);
   DrawDebugText();
   OSD::DrawMessages();
@@ -406,6 +414,25 @@ void OnScreenUI::SetMousePress(u32 button_mask)
 
   for (size_t i = 0; i < std::size(ImGui::GetIO().MouseDown); i++)
     ImGui::GetIO().MouseDown[i] = (button_mask & (1u << i)) != 0;
+}
+
+void OnScreenUI::SetImGuiInitCallback(ImGuiHookCallbackFunc callback)
+{
+  g_imgui_init_callback = callback;
+}
+
+void OnScreenUI::SetImGuiRenderCallback(ImGuiHookCallbackFunc callback)
+{
+  g_imgui_render_callback = callback;
+}
+
+void OnScreenUI::CallImGuiHookCallback(ImGuiHookCallbackFunc callback)
+{
+  if (!callback)
+    return;
+  auto context = ImGui::GetCurrentContext();
+  callback(context);
+  ImGui::SetCurrentContext(context);
 }
 
 }  // namespace VideoCommon

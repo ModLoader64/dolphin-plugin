@@ -181,6 +181,8 @@
     <ClCompile Include="Plugin\dup_string.cpp" />
     <ClCompile Include="Plugin\gui_application.cpp" />
     <ClCompile Include="Plugin\gui_main_window.cpp" />
+    <ClCompile Include="Plugin\on_screen_display.cpp" />
+    <ClCompile Include="Plugin\on_screen_ui.cpp" />
     <ClCompile Include="QtUtils\AspectRatioWidget.cpp" />
     <ClCompile Include="QtUtils\BlockUserInputFilter.cpp" />
     <ClCompile Include="QtUtils\DolphinFileDialog.cpp" />

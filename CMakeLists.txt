@@ -633,6 +633,7 @@ add_subdirectory(Externals/cpp-optparse)
 dolphin_find_optional_system_library(fmt Externals/fmt 8)
 
 add_subdirectory(Externals/imgui)
+add_subdirectory(Externals/cimgui)
 add_subdirectory(Externals/implot)
 add_subdirectory(Externals/glslang)
 # SPIRV-Cross is used on Windows for GLSL to HLSL conversion for the Direct3D 11 and Direct3D 12

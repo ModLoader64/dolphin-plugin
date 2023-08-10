@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(ExternalsDir)cimgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectReference Include="$(ExternalsDir)cimgui\cimgui.vcxproj">
+      <Project>{d7c6f272-7543-407f-8450-a205b297b06c}</Project>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
