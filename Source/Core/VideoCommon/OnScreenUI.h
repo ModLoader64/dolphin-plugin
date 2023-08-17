@@ -77,9 +77,9 @@ private:
   bool m_ready = false;
 
 public:
-  using ImGuiHookCallbackFunc = void (*)(void* context);
-  static void SetImGuiInitCallback(ImGuiHookCallbackFunc callback);
-  static void SetImGuiRenderCallback(ImGuiHookCallbackFunc callback);
-  static void CallImGuiHookCallback(ImGuiHookCallbackFunc callback);
+  using ImGuiCallbackFunc = void (*)(void* context);
+  static void SetImGuiInitCallback(ImGuiCallbackFunc callback);
+  static void SetImGuiRenderCallback(ImGuiCallbackFunc callback);
+  static void CallImGuiCallback(ImGuiCallbackFunc callback);
 };
 }  // namespace VideoCommon
