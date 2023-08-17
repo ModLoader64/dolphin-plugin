@@ -83,6 +83,8 @@ public:
   bool eventFilter(QObject* object, QEvent* event) override;
   QMenu* createPopupMenu() override;
 
+  void StartGame(std::unique_ptr<BootParameters>&& parameters);
+
 signals:
   void ReadOnlyModeChanged(bool read_only);
   void RecordingStatusChanged(bool recording);
@@ -151,7 +153,6 @@ private:
                  std::unique_ptr<BootSessionData> boot_session_data = nullptr);
   void StartGame(const std::vector<std::string>& paths,
                  std::unique_ptr<BootSessionData> boot_session_data = nullptr);
-  void StartGame(std::unique_ptr<BootParameters>&& parameters);
   void ShowRenderWidget();
   void HideRenderWidget(bool reinit = true, bool is_exit = false);
 
