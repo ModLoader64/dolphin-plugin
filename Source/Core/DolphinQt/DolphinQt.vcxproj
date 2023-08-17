@@ -176,11 +176,14 @@
     <ClCompile Include="pch_qt.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Plugin\address_space.cpp" />
     <ClCompile Include="Plugin\config.cpp" />
     <ClCompile Include="Plugin\core.cpp" />
     <ClCompile Include="Plugin\dup_string.cpp" />
     <ClCompile Include="Plugin\gui_application.cpp" />
     <ClCompile Include="Plugin\gui_main_window.cpp" />
+    <ClCompile Include="Plugin\jit_interface.cpp" />
+    <ClCompile Include="Plugin\memory.cpp" />
     <ClCompile Include="Plugin\on_screen_display.cpp" />
     <ClCompile Include="Plugin\on_screen_ui.cpp" />
     <ClCompile Include="Plugin\state.cpp" />
