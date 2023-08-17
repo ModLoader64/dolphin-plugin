@@ -204,4 +204,7 @@ void UpdateInputGate(bool require_focus, bool require_full_focus = false);
 
 void UpdateTitle();
 
+using FrameEndCallbackFunc = void (*)();
+void SetFrameEndCallback(FrameEndCallbackFunc callback);
+
 }  // namespace Core
