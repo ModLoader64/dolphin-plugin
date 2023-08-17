@@ -125,6 +125,7 @@
     <ClCompile Include="Config\ToolTipControls\BalloonTip.cpp" />
     <ClCompile Include="Config\ToolTipControls\ToolTipCheckBox.cpp" />
     <ClCompile Include="Config\ToolTipControls\ToolTipComboBox.cpp" />
+    <ClCompile Include="Config\ToolTipControls\ToolTipPushButton.cpp" />
     <ClCompile Include="Config\ToolTipControls\ToolTipRadioButton.cpp" />
     <ClCompile Include="Config\ToolTipControls\ToolTipSlider.cpp" />
     <ClCompile Include="Config\ToolTipControls\ToolTipSpinBox.cpp" />
@@ -197,6 +198,7 @@
     <ClCompile Include="QtUtils\ModalMessageBox.cpp" />
     <ClCompile Include="QtUtils\NonDefaultQPushButton.cpp" />
     <ClCompile Include="QtUtils\PartiallyClosableTabWidget.cpp" />
+    <ClCompile Include="QtUtils\SetWindowDecorations.cpp" />
     <ClCompile Include="QtUtils\UTF8CodePointCountValidator.cpp" />
     <ClCompile Include="QtUtils\WindowActivationEventFilter.cpp" />
     <ClCompile Include="QtUtils\WrapInScrollArea.cpp" />
@@ -337,6 +339,7 @@
     <QtMoc Include="Config\ToolTipControls\BalloonTip.h" />
     <ClInclude Include="Config\ToolTipControls\ToolTipCheckBox.h" />
     <ClInclude Include="Config\ToolTipControls\ToolTipComboBox.h" />
+    <ClInclude Include="Config\ToolTipControls\ToolTipPushButton.h" />
     <ClInclude Include="Config\ToolTipControls\ToolTipRadioButton.h" />
     <ClInclude Include="Config\ToolTipControls\ToolTipSlider.h" />
     <ClInclude Include="Config\ToolTipControls\ToolTipSpinBox.h" />
@@ -390,6 +393,7 @@
     <QtMoc Include="QtUtils\FileOpenEventFilter.h" />
     <QtMoc Include="QtUtils\ParallelProgressDialog.h" />
     <QtMoc Include="QtUtils\PartiallyClosableTabWidget.h" />
+    <ClInclude Include="QtUtils\SetWindowDecorations.h" />
     <QtMoc Include="QtUtils\UTF8CodePointCountValidator.h" />
     <QtMoc Include="QtUtils\WindowActivationEventFilter.h" />
     <QtMoc Include="RenderWidget.h" />
@@ -425,6 +429,10 @@
   </ItemGroup>
   <ItemGroup>
     <Natvis Include="qt6.natvis" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Styles\Dark\dark.qss" />
+    <QtRcc Include="Styles\Dark\dark.qrc" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="$(CoreDir)DolphinLib.vcxproj">
