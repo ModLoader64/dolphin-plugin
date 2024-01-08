@@ -42,7 +42,7 @@ else()
   check_and_add_flag(LOGICAL_OP -Wlogical-op)
   check_and_add_flag(SHADOW -Wshadow)
   check_and_add_flag(INIT_SELF -Winit-self)
-  check_and_add_flag(MISSING_DECLARATIONS -Wmissing-declarations)
+  # check_and_add_flag(MISSING_DECLARATIONS -Wmissing-declarations)
   check_and_add_flag(MISSING_VARIABLE_DECLARATIONS -Wmissing-variable-declarations)
 
   # Disable -Wstringop-truncation warnings as they result in many false positives.

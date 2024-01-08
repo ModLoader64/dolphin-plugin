@@ -19,7 +19,7 @@ message(STATUS "Found Qt version ${Qt6_VERSION}")
 
 set_property(TARGET Qt6::Core PROPERTY INTERFACE_COMPILE_FEATURES "")
 
-add_executable(dolphin-emu
+add_library(dolphin-emu SHARED
   AboutDialog.cpp
   AboutDialog.h
   CheatSearchFactoryWidget.cpp
@@ -365,6 +365,18 @@ add_executable(dolphin-emu
   Updater.h
   WiiUpdate.cpp
   WiiUpdate.h
+  Plugin/address_space.cpp
+  Plugin/config.cpp
+  Plugin/core.cpp
+  Plugin/dup_string.cpp
+  Plugin/dup_string.h
+  Plugin/export.h
+  Plugin/gui_application.cpp
+  Plugin/gui_main_window.cpp
+  Plugin/jit_interface.cpp
+  Plugin/memory.cpp
+  Plugin/osd.cpp
+  Plugin/state.cpp
 )
 
 if (WIN32)

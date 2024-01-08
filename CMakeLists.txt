@@ -185,6 +185,7 @@ endif()
 # here.  You must run "make install" to install these to the proper location
 # as defined above.
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/Binaries)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/Binaries)
 
 if (WIN32)
   set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/Binary)
@@ -195,6 +196,8 @@ if (WIN32)
     string(APPEND CMAKE_RUNTIME_OUTPUT_DIRECTORY /ARM64)
   endif()
 endif()
+
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 # setup CCache
 include(CCache)

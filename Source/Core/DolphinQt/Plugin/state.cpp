@@ -2,6 +2,8 @@
 
 #include "Core/State.h"
 
+#include <cstring>
+
 EXPORT void state_save(int slot, bool wait)
 {
   State::Save(slot, wait);
