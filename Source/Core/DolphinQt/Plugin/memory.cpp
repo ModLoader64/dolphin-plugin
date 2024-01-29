@@ -98,3 +98,33 @@ EXPORT void memory_write_u8(u8 var, u32 address)
 {
   return get_memory_manager().Write_U8(var, address);
 }
+
+EXPORT u16 memory_read_u16(u32 address)
+{
+  return get_memory_manager().Read_U16(address);
+}
+
+EXPORT void memory_write_u16(u16 var, u32 address)
+{
+  return get_memory_manager().Write_U16(var, address);
+}
+
+EXPORT u8 memory_read_u32(u32 address)
+{
+  return get_memory_manager().Read_U32(address);
+}
+
+EXPORT void memory_write_u32(u32 var, u32 address)
+{
+  return get_memory_manager().Write_U32(var, address);
+}
+
+EXPORT u8 memory_read_u64(u32 address)
+{
+  return get_memory_manager().Read_U64(address);
+}
+
+EXPORT void memory_write_u64(u64 var, u32 address)
+{
+  return get_memory_manager().Write_U64(var, address);
+}
