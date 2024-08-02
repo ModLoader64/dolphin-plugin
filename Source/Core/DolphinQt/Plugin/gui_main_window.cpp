@@ -7,10 +7,11 @@ static MainWindow* g_main_window;
 
 EXPORT void gui_main_window_create()
 {
-  g_main_window = new MainWindow({}, {});
-  Settings::Instance().InitDefaultPalette();
-  Settings::Instance().UpdateSystemDark();
+  auto& settings = Settings::Instance();
+  settings.InitDefaultPalette();
+  settings.UpdateSystemDark();
   Settings::Instance().ApplyStyle();
+  g_main_window = new MainWindow({}, {});
 }
 
 EXPORT void gui_main_window_destroy()
