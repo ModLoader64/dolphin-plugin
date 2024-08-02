@@ -888,6 +888,7 @@ void MainWindow::OnStopComplete()
     if (m_assembler_widget->ApplicationCloseRequest())
     {
       qApp->postEvent(qApp, new QEvent{QEvent::Quit});
+      QGuiApplication::exit(0);
     }
     else
     {
