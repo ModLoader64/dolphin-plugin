@@ -189,6 +189,8 @@
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
 	<ClCompile Include="Plugin\core.cpp" />
+    <ClCompile Include="Plugin\gui_application.cpp" />
+	<ClCompile Include="Plugin\gui_main_window.cpp" />
     <ClCompile Include="QtUtils\AspectRatioWidget.cpp" />
     <ClCompile Include="QtUtils\BlockUserInputFilter.cpp" />
     <ClCompile Include="QtUtils\ClearLayoutRecursively.cpp" />

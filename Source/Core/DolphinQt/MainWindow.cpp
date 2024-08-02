@@ -887,7 +887,7 @@ void MainWindow::OnStopComplete()
   {
     if (m_assembler_widget->ApplicationCloseRequest())
     {
-      QGuiApplication::exit(0);
+      qApp->postEvent(qApp, new QEvent{QEvent::Quit});
     }
     else
     {
