@@ -140,6 +140,8 @@ bool IsCPUThread();  // this tells us whether we are the CPU thread.
 bool IsGPUThread();
 bool IsHostThread();
 
+Core::System& GetSystem();
+
 bool WantsDeterminism();
 
 // [NOT THREADSAFE] For use by Host only

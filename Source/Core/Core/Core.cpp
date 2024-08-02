@@ -226,6 +226,11 @@ bool IsHostThread()
   return tls_is_host_thread;
 }
 
+Core::System& GetSystem()
+{
+  return Core::System::GetInstance();
+}
+
 bool WantsDeterminism()
 {
   return s_wants_determinism;
