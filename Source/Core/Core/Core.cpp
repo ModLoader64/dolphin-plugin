@@ -166,6 +166,19 @@ void FrameUpdateOnCPUThread()
     NetPlay::NetPlayClient::SendTimeBase();
 }
 
+static FrameEndCallbackFunc g_frame_end_callback;
+
+void SetFrameEndCallback(FrameEndCallbackFunc callback)
+{
+  g_frame_end_callback = callback;
+}
+
+static void CallFrameEndCallback()
+{
+  if (g_frame_end_callback)
+    g_frame_end_callback();
+}
+
 void OnFrameEnd(Core::System& system)
 {
 #ifdef USE_MEMORYWATCHER
@@ -177,6 +190,8 @@ void OnFrameEnd(Core::System& system)
     s_memory_watcher->Step(guard);
   }
 #endif
+
+  CallFrameEndCallback();
 }
 
 // Display messages and return values

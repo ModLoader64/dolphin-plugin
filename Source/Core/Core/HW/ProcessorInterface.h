@@ -110,5 +110,11 @@ private:
   u32 m_reset_code = 0;
 
   Core::System& m_system;
+
+  public:
+    using ResetCallbackFunc = void (*)();
+    static void SetResetCallback(ResetCallbackFunc callback);
+    static void CallResetCallback();
 };
+
 }  // namespace ProcessorInterface

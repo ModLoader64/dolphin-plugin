@@ -1,6 +1,8 @@
 #include "export.h"
 
 #include "Core/Core.h"
+#include "Core/HW/ProcessorInterface.h"
+#include "Core/System.h"
 
 EXPORT double core_get_actual_emulation_speed()
 {
@@ -89,4 +91,15 @@ EXPORT void core_host_dispatch_jobs()
 EXPORT void core_do_frame_step()
 {
   Core::DoFrameStep(Core::GetSystem());
+}
+
+EXPORT void core_set_frame_end_callback(Core::FrameEndCallbackFunc callback)
+{
+  Core::SetFrameEndCallback(callback);
+}
+
+EXPORT void
+core_set_reset_callback(ProcessorInterface::ProcessorInterfaceManager::ResetCallbackFunc callback)
+{
+  Core::System::GetInstance().GetProcessorInterface().SetResetCallback(callback);
 }

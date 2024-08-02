@@ -264,6 +264,7 @@ void ProcessorInterfaceManager::ResetButton_Tap()
                             CoreTiming::FromThread::ANY);
   core_timing.ScheduleEvent(m_system.GetSystemTimers().GetTicksPerSecond() / 2,
                             m_event_type_toggle_reset_button, false, CoreTiming::FromThread::ANY);
+  CallResetCallback();
 }
 
 void ProcessorInterfaceManager::PowerButton_Tap()
@@ -274,6 +275,19 @@ void ProcessorInterfaceManager::PowerButton_Tap()
   auto& core_timing = m_system.GetCoreTiming();
   core_timing.ScheduleEvent(0, m_event_type_ios_notify_power_button, 0,
                             CoreTiming::FromThread::ANY);
+}
+
+static ProcessorInterfaceManager::ResetCallbackFunc g_reset_callback;
+
+void ProcessorInterfaceManager::SetResetCallback(ResetCallbackFunc callback)
+{
+  g_reset_callback = callback;
+}
+
+void ProcessorInterfaceManager::CallResetCallback()
+{
+  if (g_reset_callback)
+    g_reset_callback();
 }
 
 }  // namespace ProcessorInterface
