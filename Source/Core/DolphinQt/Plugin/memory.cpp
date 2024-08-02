@@ -81,7 +81,7 @@ EXPORT u8* memory_get_fake_vmem()
 
 EXPORT u8* memory_get_pointer(u32 address)
 {
-  return get_memory_manager().GetPointer(address);
+  return 0;
 }
 
 EXPORT u8* memory_get_pointer_for_range(u32 address, u32 size)

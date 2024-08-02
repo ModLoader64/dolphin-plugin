@@ -293,7 +293,7 @@ void MemChecks::Add(TMemCheck memory_check)
   // If this is the first one, clear the JIT cache so it can switch to
   // watchpoint-compatible code.
   if (!had_any)
-    m_system.GetJitInterface().ClearCache(guard);
+    m_system.GetJitInterface().ClearCache();
   m_system.GetMMU().DBATUpdated();
 }
 
@@ -321,7 +321,7 @@ void MemChecks::Remove(u32 address)
   const Core::CPUThreadGuard guard(m_system);
   m_mem_checks.erase(iter);
   if (!HasAny())
-    m_system.GetJitInterface().ClearCache(guard);
+    m_system.GetJitInterface().ClearCache();
   m_system.GetMMU().DBATUpdated();
 }
 
@@ -329,7 +329,7 @@ void MemChecks::Clear()
 {
   const Core::CPUThreadGuard guard(m_system);
   m_mem_checks.clear();
-  m_system.GetJitInterface().ClearCache(guard);
+  m_system.GetJitInterface().ClearCache();
   m_system.GetMMU().DBATUpdated();
 }
 

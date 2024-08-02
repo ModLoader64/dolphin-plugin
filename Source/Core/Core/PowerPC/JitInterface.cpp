@@ -245,7 +245,7 @@ bool JitInterface::HandleStackFault()
   return m_jit->HandleStackFault();
 }
 
-void JitInterface::ClearCache(const Core::CPUThreadGuard&)
+void JitInterface::ClearCache()
 {
   if (m_jit)
     m_jit->ClearCache();

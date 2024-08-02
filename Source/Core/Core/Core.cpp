@@ -1001,7 +1001,7 @@ void UpdateWantDeterminism(Core::System& system, bool initial)
 
     // We need to clear the cache because some parts of the JIT depend on want_determinism,
     // e.g. use of FMA.
-    system.GetJitInterface().ClearCache(guard);
+    system.GetJitInterface().ClearCache();
   }
 }
 

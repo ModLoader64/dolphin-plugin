@@ -1787,7 +1787,7 @@ void MenuBar::PatchHLEFunctions()
 void MenuBar::ClearCache()
 {
   auto& system = Core::System::GetInstance();
-  system.GetJitInterface().ClearCache(Core::CPUThreadGuard{system});
+  system.GetJitInterface().ClearCache();
 }
 
 void MenuBar::LogInstructions()
