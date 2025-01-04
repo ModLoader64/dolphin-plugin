@@ -106,7 +106,17 @@ public:
   // emulated hardware outside the CPU. Use "Device_" prefix.
   std::string GetString(u32 em_address, size_t size = 0);
   u8* GetPointer(u32 address) const;
+
+  // If the specified guest address is within a valid memory region, returns a span starting at the
+  // host address corresponding to the specified address and ending where the memory region ends.
+  // Otherwise, returns a 0-length span starting at nullptr.
+  std::span<u8> GetSpanForAddress(u32 address) const;
+  u8* GetPointer(u32 address) const;
+
+  // If the specified range is within a single valid memory region, returns a pointer to the start
+  // of the corresponding range in host memory. Otherwise, returns nullptr.
   u8* GetPointerForRange(u32 address, size_t size) const;
+
   void CopyFromEmu(void* data, u32 address, size_t size) const;
   void CopyToEmu(u32 address, const void* data, size_t size);
   void Memset(u32 address, u8 value, size_t size);

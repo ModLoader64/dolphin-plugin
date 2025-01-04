@@ -71,7 +71,7 @@ public:
   bool HandleStackFault();
 
   // Clearing CodeCache
-  void ClearCache();
+  void ClearCache(const Core::CPUThreadGuard& guard);
 
   // This clear is "safe" in the sense that it's okay to run from
   // inside a JIT'ed block: it clears the instruction cache, but not

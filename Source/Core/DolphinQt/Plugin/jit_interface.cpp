@@ -10,7 +10,7 @@ static JitInterface& get_jit_interface()
 
 EXPORT void jit_interface_clear_cache()
 {
-  get_jit_interface().ClearCache();
+  get_jit_interface().ClearSafe();
 }
 
 EXPORT void jit_interface_invalidate_icache(u32 address, u32 size, bool forced)
